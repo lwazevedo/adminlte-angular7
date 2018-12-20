@@ -1,0 +1,74 @@
+<ul class="sidebar-menu" data-widget="tree">
+    <ng-container *ngFor="let item of links">
+        <!-- HEADER -->
+        <ng-container *ngIf="item.header">
+            <li class="header">{{item.header}}</li>
+        </ng-container>
+        <!-- LINK -->
+        <ng-container *ngIf="item.link">
+            <li [routerLinkActive]="['active']">
+                <a *ngIf="!item.external" [routerLink]="item.link">
+                    <i class="fa fa-{{item.icon}}"></i>
+                    <span>{{item.title}}</span>
+                </a>
+                <a *ngIf="item.external" [href]="item.link" [target]="item.target">
+                    <i class="fa fa-{{item.icon}}"></i>
+                    <span>{{item.title}}</span>
+                </a>
+            </li>
+        </ng-container>
+        <!-- LINK WITH SUBLINKS -->
+        <ng-container *ngIf="item.sublinks">
+            <li class="treeview">
+                <a href="#">
+                    <i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
+                    <span>{{item.title}} - X</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    <!--i class="fa fa-angle-left pull-right"></i-->
+                </a>
+                <ul class="treeview-menu">
+                    <ng-container *ngFor="let subitem of item.sublinks">
+                        <li *ngIf="!subitem.sublinks" [routerLinkActive]="['active']">
+                            <a *ngIf="!subitem.external" [routerLink]="subitem.link">
+                                <i *ngIf="subitem.icon" class="fa fa-{{subitem.icon}}"></i>
+                                <span>{{subitem.title}}</span>
+                            </a>
+                            <a *ngIf="subitem.external" [href]="subitem.link" [target]="subitem.target">
+                                <i *ngIf="subitem.icon" class="fa fa-{{subitem.icon}}"></i>
+                                <span>{{subitem.title}}</span>
+                            </a>
+                        </li>
+                        <ng-container *ngIf="subitem.sublinks">
+                            <li class="treeview">
+                                <a href="#">
+                                    <i *ngIf="subitem.icon" class="fa fa-{{subitem.icon}}"></i>
+                                    <span>{{subitem.title}} - X</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                    <!--i class="fa fa-angle-left pull-right"></i-->
+                                </a>
+                                <ul class="treeview-menu">
+                                    <ng-container *ngFor="let subSubitem of subitem.sublinks">
+                                        <li [routerLinkActive]="['active']">
+                                            <a *ngIf="!subSubitem.external" [routerLink]="subSubitem.link">
+                                                <i *ngIf="subSubitem.icon" class="fa fa-{{subSubitem.icon}}"></i>
+                                                <span>{{subSubitem.title}}</span>
+                                            </a>
+                                            <a *ngIf="subSubitem.external" [href]="subSubitem.link" [target]="subSubitem.target">
+                                                <i *ngIf="subSubitem.icon" class="fa fa-{{subSubitem.icon}}"></i>
+                                                <span>{{subSubitem.title}}</span>
+                                            </a>
+                                        </li>
+                                    </ng-container>
+                                </ul>
+                            </li>
+                        </ng-container>
+                    </ng-container>
+                </ul>
+            </li>
+        </ng-container>
+    </ng-container>
+</ul>
