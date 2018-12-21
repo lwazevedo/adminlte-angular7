@@ -2,7 +2,7 @@ import { TreeViewInfo } from './tree-view.metadata';
 
 export const MENUS: TreeViewInfo[] = [
     {
-        'header': 'Header'
+        'header': 'MAIN NAVIGATION'
     },
     {
         'title': 'Home',
@@ -13,33 +13,53 @@ export const MENUS: TreeViewInfo[] = [
     },
     {
         'title': 'Multilevel',
-        'icon': 'link',
+        'icon': 'share',
         'external': false,
         'target': '_blank',
         'sublinks': [
             {
-                'title': 'leval 1',
+                'title': 'Level One',
                 'link': '',
+                'icon': 'circle-o',
                 'external': false,
                 'target': '_blank',
                 'sublinks': [
                     {
-                        'title': 'level 2',
+                        'title': 'Level Two',
                         'link': '',
+                        'icon': 'circle-o',
                         'external': false,
-                        'target': '_blank'
+                        'target': '_blank',
+                        'sublinks': [
+                            {
+                                'title': 'Level Three',
+                                'link': 'www.google.com.br',
+                                'icon': 'circle-o',
+                                'external': true,
+                                'target': '_self'
+                            },
+                            {
+                                'title': 'Level Three',
+                                'link': '',
+                                'icon': 'circle-o',
+                                'external': false,
+                                'target': '_blank'
+                            }
+                        ]
                     },
                     {
-                        'title': 'level 2.1',
+                        'title': 'Level Two',
                         'link': '',
+                        'icon': 'circle-o',
                         'external': false,
                         'target': '_blank'
                     }
                 ]
             },
             {
-                'title': 'level 1.1',
+                'title': 'Level One',
                 'link': '',
+                'icon': 'circle-o',
                 'external': false,
                 'target': '_blank'
             }

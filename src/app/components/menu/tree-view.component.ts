@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { MENUS } from './tree-view-itens';
 import { TreeViewInfo } from './tree-view.metadata';
@@ -20,7 +20,6 @@ export class TreeViewComponent implements OnInit {
 
   getmlinks() {
     this.links = MENUS.filter(itens => itens);
-    // console.log(this.menuItems);
   }
 
 }
