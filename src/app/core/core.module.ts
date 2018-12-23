@@ -9,14 +9,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { TreeViewComponent } from './components/menu/tree-view.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
+import { RoutePartsService } from './services/route-parts.service';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     SettingsComponent,
-    TreeViewComponent
+    TreeViewComponent,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +36,9 @@ import { TreeViewComponent } from './components/menu/tree-view.component';
     FooterComponent,
     SettingsComponent,
     TreeViewComponent
+  ],
+  providers: [
+    RoutePartsService
   ]
 })
 export class CoreModule { }

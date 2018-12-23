@@ -6,4 +6,5 @@ export interface TreeViewInfo {
     sublinks?: TreeViewInfo[];
     target?: string;
     external?: boolean;
+    description?: string;
 }

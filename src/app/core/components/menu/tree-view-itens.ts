@@ -7,59 +7,64 @@ export const MENUS: TreeViewInfo[] = [
     {
         'title': 'Home',
         'icon': 'dashboard',
-        'link': '/',
+        'link': '/dashboard',
         'external': false,
         'target': '_blank'
     },
     {
-        'title': 'Multilevel',
+        'title': 'Registration',
         'icon': 'share',
         'external': false,
         'target': '_blank',
         'sublinks': [
             {
-                'title': 'Level One',
-                'link': '',
-                'icon': 'circle-o',
+                'title': 'Starships & Vehicles',
+                'icon': 'circle-o text-aqua',
                 'external': false,
                 'target': '_blank',
                 'sublinks': [
                     {
-                        'title': 'Level Two',
+                        'title': 'Starships',
                         'link': '',
-                        'icon': 'circle-o',
+                        'icon': 'circle-o text-aqua',
                         'external': false,
                         'target': '_blank',
-                        'sublinks': [
-                            {
-                                'title': 'Level Three',
-                                'link': 'www.google.com.br',
-                                'icon': 'circle-o',
-                                'external': true,
-                                'target': '_self'
-                            },
-                            {
-                                'title': 'Level Three',
-                                'link': '',
-                                'icon': 'circle-o',
-                                'external': false,
-                                'target': '_blank'
-                            }
-                        ]
+                        'sublinks': null
                     },
                     {
-                        'title': 'Level Two',
+                        'title': 'Vehicles',
                         'link': '',
-                        'icon': 'circle-o',
+                        'icon': 'circle-o text-aqua',
                         'external': false,
                         'target': '_blank'
                     }
                 ]
             },
             {
-                'title': 'Level One',
+                'title': 'People',
                 'link': '',
-                'icon': 'circle-o',
+                'icon': 'circle-o text-aqua',
+                'external': false,
+                'target': '_blank'
+            },
+            {
+                'title': 'Species',
+                'link': '',
+                'icon': 'circle-o text-aqua',
+                'external': false,
+                'target': '_blank'
+            },
+            {
+                'title': 'Planets',
+                'link': '',
+                'icon': 'circle-o text-aqua',
+                'external': false,
+                'target': '_blank'
+            },
+            {
+                'title': 'Films',
+                'link': '/films',
+                'icon': 'circle-o text-aqua',
                 'external': false,
                 'target': '_blank'
             }
