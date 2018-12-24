@@ -11,7 +11,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { TreeViewComponent } from './components/menu/tree-view.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
-import { RoutePartsService } from './services/route-parts.service';
+
 
 @NgModule({
   declarations: [
@@ -35,10 +35,8 @@ import { RoutePartsService } from './services/route-parts.service';
     HeaderComponent,
     FooterComponent,
     SettingsComponent,
-    TreeViewComponent
-  ],
-  providers: [
-    RoutePartsService
+    TreeViewComponent,
+    BreadcrumbComponent
   ]
 })
 export class CoreModule { }

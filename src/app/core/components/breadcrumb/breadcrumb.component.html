@@ -1,3 +1,17 @@
-<p>
-  breadcrumb works!
-</p>
+<section class="content-header">
+  <h1>
+    {{pageInfo?.title}}
+    <small>{{pageInfo?.description}}</small>
+  </h1>
+  <ol class="breadcrumb">
+    <ng-template ngFor let-url [ngForOf]="pageInfo?.urls" let-last="last">
+      <li *ngIf="!last" [routerLink]="url.url">
+        <a href="javascript:void(0)">
+          <i *ngIf="url.icon" class="fa fa-{{url.icon}}"></i>
+          {{url.title}}
+        </a>
+      </li>
+      <li class="active" *ngIf="last">{{url.title}}</li>
+    </ng-template>
+  </ol>
+</section>

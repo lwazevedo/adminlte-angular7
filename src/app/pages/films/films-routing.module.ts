@@ -5,7 +5,14 @@ import { FilmComponent } from './film/film.component';
 
 
 const routes: Routes = [
-    { path: '', component: FilmComponent }
+    { path: '', component: FilmComponent, data: {
+        title: 'Films',
+        description: 'V.1.0.0',
+        urls: [
+            { title: 'Home', url: '/dashboard', icon: 'dashboard' },
+            { title: 'Films' }
+        ]
+    } }
 ];
 
 @NgModule({
