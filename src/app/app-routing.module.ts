@@ -12,6 +12,9 @@ const routes: Routes = [
     path: 'films', loadChildren: './pages/films/films.module#FilmsModule'
   },
   {
+    path: 'people', loadChildren: './pages/people/people.module#PeopleModule'
+  },
+  {
     path: '', redirectTo: '/home', pathMatch: 'full'
   }
 ];

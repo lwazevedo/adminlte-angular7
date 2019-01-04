@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+
 
 import { MENUS } from './tree-view-itens';
 import { TreeViewInfo } from './tree-view.metadata';
@@ -11,8 +13,9 @@ import { TreeViewInfo } from './tree-view.metadata';
 export class TreeViewComponent implements OnInit {
 
   public links: Array<TreeViewInfo> = [];
+  public currentUrl: string;
 
-  constructor() { }
+  constructor(private router: Router) { this.getCurrentUrl();}
 
   ngOnInit() {
     this.getmlinks();
@@ -54,4 +57,12 @@ export class TreeViewComponent implements OnInit {
     }
   }
 
+  getCurrentUrl(){
+    this.router.events
+        .subscribe((event: any) => {
+          if(event instanceof NavigationEnd) {
+            this.currentUrl = event.url
+          }
+        });
+  }
 }

@@ -24,7 +24,7 @@ export const MENUS: TreeViewInfo[] = [
         'external': false,
         'target': '_blank',
         'sublinks': [
-            {
+            /*{
                 'title': 'Starships & Vehicles',
                 'icon': 'circle-o text-aqua',
                 'external': false,
@@ -32,7 +32,7 @@ export const MENUS: TreeViewInfo[] = [
                 'sublinks': [
                     {
                         'title': 'Starships',
-                        'link': '',
+                        'link': '/starships',
                         'icon': 'circle-o text-aqua',
                         'external': false,
                         'target': '_blank',
@@ -40,34 +40,34 @@ export const MENUS: TreeViewInfo[] = [
                     },
                     {
                         'title': 'Vehicles',
-                        'link': '',
+                        'link': '/vehicles',
                         'icon': 'circle-o text-aqua',
                         'external': false,
                         'target': '_blank'
                     }
                 ]
-            },
+            },*/
             {
                 'title': 'People',
-                'link': '',
+                'link': '/people',
                 'icon': 'circle-o text-aqua',
                 'external': false,
                 'target': '_blank'
             },
-            {
+            /*{
                 'title': 'Species',
-                'link': '',
+                'link': '/species',
                 'icon': 'circle-o text-aqua',
                 'external': false,
                 'target': '_blank'
             },
             {
                 'title': 'Planets',
-                'link': '',
+                'link': '/planers',
                 'icon': 'circle-o text-aqua',
                 'external': false,
                 'target': '_blank'
-            },
+            },*/
             {
                 'title': 'Films',
                 'link': '/films',
