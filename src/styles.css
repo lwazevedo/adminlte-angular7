@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.bg-light-black-gradient {
+    background: #253135 !important;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #253135), color-stop(1, #222c30)) !important;
+    background: -ms-linear-gradient(bottom, #253135, #222c30) !important;
+    background: -moz-linear-gradient(center bottom, #253135 0%, #222c30 100%) !important;
+    background: -o-linear-gradient(#222c30, #253135) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#222c30', endColorstr='#253135', GradientType=0) !important;
+    color: #fff;
+  }
+
+  
+  

@@ -6,6 +6,13 @@ export const MENUS: TreeViewInfo[] = [
     },
     {
         'title': 'Home',
+        'icon': 'home',
+        'link': '/home',
+        'external': false,
+        'target': '_blank'
+    },
+    {
+        'title': 'Dashboard',
         'icon': 'dashboard',
         'link': '/dashboard',
         'external': false,

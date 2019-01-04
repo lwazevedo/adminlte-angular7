@@ -5,8 +5,8 @@
                 <ng-container *ngFor="let item of links">
                     <li *ngIf="item.header" class="header">{{item.header}}</li>
 
-                    <li *ngIf="!item.sublinks && !item.external && !item.header">
-                        <a [routerLink]="item.link" [routerLinkActive]="['active']">
+                    <li *ngIf="!item.sublinks && !item.external && !item.header" [routerLinkActive]="['active']">
+                        <a [routerLink]="item.link" >
                             <i class="fa fa-{{item.icon}}"></i>
                             <span>{{item.title}}</span>
                         </a>
@@ -17,7 +17,7 @@
                             <span>{{item.title}}</span>
                         </a>
                     </li>
-                    <li class="treeview" *ngIf="item.sublinks">
+                    <li class="treeview" *ngIf="item.sublinks" >
                         <a href="#">
                             <i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
                             <span>{{item.title}}</span>

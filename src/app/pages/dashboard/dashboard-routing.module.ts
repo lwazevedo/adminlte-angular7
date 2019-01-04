@@ -9,7 +9,7 @@ const routes: Routes = [
             title: 'Dashboard',
             description: 'V.1.0.0',
             urls: [
-                { title: 'Home', url: '/dashboard', icon: 'dashboard' },
+                { title: 'Dashboard', url: '/dashboard', icon: 'dashboard' },
                 { title: 'Dashboard' }
             ]
         }
