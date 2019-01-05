@@ -7,4 +7,5 @@ export interface TreeViewInfo {
     target?: string;
     external?: boolean;
     description?: string;
+    order?: number;
 }

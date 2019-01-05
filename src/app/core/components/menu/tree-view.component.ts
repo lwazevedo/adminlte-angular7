@@ -15,10 +15,11 @@ export class TreeViewComponent implements OnInit {
   public links: Array<TreeViewInfo> = [];
   public currentUrl: string;
 
-  constructor(private router: Router) { this.getCurrentUrl();}
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.getmlinks();
+    this.getCurrentUrl();
   }
 
   getmlinks() {
@@ -29,23 +30,42 @@ export class TreeViewComponent implements OnInit {
       if (b.sublinks) {
         b.sublinks = this.sortChildren(b.sublinks);
       }
-      if (a.title < b.title) {
-        return -1;
+      if (a.order || b.order) {
+        if (a.order < b.order) {
+          return -1;
+        }
+        if (a.order > b.order) {
+          return 1;
+        }
+      } else {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
       }
-      if (a.title > b.title) {
-        return 1;
-      }
+
       return 0;
     });
   }
 
   sortChildren(children) {
     children = children.sort((a, b) => {
-      if (a.title < b.title) {
-        return -1;
-      }
-      if (a.title > b.title) {
-        return 1;
+      if (a.order || b.order) {
+        if (a.order < b.order) {
+          return -1;
+        }
+        if (a.order > b.order) {
+          return 1;
+        }
+      } else {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
       }
       return 0;
     });
@@ -57,12 +77,16 @@ export class TreeViewComponent implements OnInit {
     }
   }
 
-  getCurrentUrl(){
+  getCurrentUrl() {
     this.router.events
-        .subscribe((event: any) => {
-          if(event instanceof NavigationEnd) {
-            this.currentUrl = event.url
-          }
-        });
+      .subscribe((event: any) => {
+        if (event instanceof NavigationEnd) {
+          this.currentUrl = event.url;
+        }
+      });
+  }
+
+  isCurrentSublink(data): boolean {
+    return data.find((value) => value.link === this.currentUrl);
   }
 }

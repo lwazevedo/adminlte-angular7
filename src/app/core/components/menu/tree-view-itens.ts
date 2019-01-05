@@ -2,27 +2,31 @@ import { TreeViewInfo } from './tree-view.metadata';
 
 export const MENUS: TreeViewInfo[] = [
     {
-        'header': 'MAIN NAVIGATION'
+        'header': 'MAIN NAVIGATION',
+        'order': 0
     },
     {
         'title': 'Home',
         'icon': 'home',
         'link': '/home',
         'external': false,
-        'target': '_blank'
+        'target': '_blank',
+        'order': 1
     },
     {
         'title': 'Dashboard',
         'icon': 'dashboard',
         'link': '/dashboard',
         'external': false,
-        'target': '_blank'
+        'target': '_blank',
+        'order': 2
     },
     {
         'title': 'Registration',
         'icon': 'share',
         'external': false,
         'target': '_blank',
+        'order': 3,
         'sublinks': [
             /*{
                 'title': 'Starships & Vehicles',
