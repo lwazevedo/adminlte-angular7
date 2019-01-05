@@ -5,13 +5,13 @@
   </h1>
   <ol class="breadcrumb">
     <ng-template ngFor let-url [ngForOf]="pageInfo?.urls" let-last="last">
-      <li *ngIf="!last" [routerLink]="url.url">
+      <li *ngIf="!last && url.url" [routerLink]="url.url">
         <a href="javascript:void(0)">
           <i *ngIf="url.icon" class="fa fa-{{url.icon}}"></i>
           {{url.title}}
         </a>
       </li>
-      <li class="active" *ngIf="last">{{url.title}}</li>
+      <li class="active" *ngIf="last || !url.url">{{url.title}}</li>
     </ng-template>
   </ol>
 </section>
