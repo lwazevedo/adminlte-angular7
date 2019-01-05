@@ -1,11 +1,11 @@
 <aside class="main-sidebar">
     <section class="sidebar">
         <ul class="sidebar-menu" data-widget="tree">
-            <ng-template #recursiveList let-links>
+            <ng-template #recursiveList let-links >
                 <ng-container *ngFor="let item of links">
                     <li *ngIf="item.header" class="header">{{item.header}}</li>
 
-                    <li *ngIf="!item.sublinks && !item.external && !item.header" [routerLinkActive]="['active']">
+                    <li *ngIf="!item.sublinks && !item.external && !item.header" routerLinkActive="active">
                         <a [routerLink]="item.link" >
                             <i class="fa fa-{{item.icon}}"></i>
                             <span>{{item.title}}</span>
@@ -17,8 +17,8 @@
                             <span>{{item.title}}</span>
                         </a>
                     </li>                    
-                    <li class="treeview" *ngIf="item.sublinks" [class.active]="isCurrentSublink(item.sublinks)">
-                        <a href="#">
+                    <li class="treeview" *ngIf="item.sublinks" [ngClass]="{'active menu-open': isCurrentSublink(item.sublinks)}">
+                        <a href="#" >
                             <i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
                             <span>{{item.title}}</span>
                             <span class="pull-right-container">
@@ -26,7 +26,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu" *ngIf="item.sublinks">
-                            <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.sublinks}">
+                            <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.sublinks}" >
                             </ng-container>
                         </ul>
                     </li>

@@ -14,6 +14,7 @@ export class TreeViewComponent implements OnInit {
 
   public links: Array<TreeViewInfo> = [];
   public currentUrl: string;
+  isActive: boolean;
 
   constructor(private router: Router) { }
 
@@ -89,4 +90,5 @@ export class TreeViewComponent implements OnInit {
   isCurrentSublink(data): boolean {
     return data.find((value) => value.link === this.currentUrl);
   }
+
 }
