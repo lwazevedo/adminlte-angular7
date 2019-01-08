@@ -1,5 +1,7 @@
 import { TreeViewInfo } from './tree-view.metadata';
 
+
+
 export const MENUS: TreeViewInfo[] = [
     {
         'header': 'MAIN NAVIGATION',
@@ -12,6 +14,14 @@ export const MENUS: TreeViewInfo[] = [
         'external': false,
         'target': '_blank',
         'order': 1
+    },
+    {
+        'title': 'Google',
+        'icon': 'link',
+        'link': 'https://www.google.com',
+        'external': true,
+        'target': '_self',
+        'order': 100
     },
     {
         'title': 'Dashboard',

@@ -14,7 +14,7 @@ export class TreeViewComponent implements OnInit {
 
   public links: Array<TreeViewInfo> = [];
   public currentUrl: string;
-  isActive: boolean;
+  public selectedItemIndex = -1;
 
   constructor(private router: Router) { }
 
@@ -87,8 +87,13 @@ export class TreeViewComponent implements OnInit {
       });
   }
 
-  isCurrentSublink(data): boolean {
-    return data.find((value) => value.link === this.currentUrl);
+
+  public selectedMenuItem(itemIndex: number) {
+    this.selectedItemIndex = itemIndex;
+  }
+
+  public hasSublinks (menu: TreeViewInfo): boolean {
+    return menu.sublinks && menu.sublinks.length > 0 ? true : false;
   }
 
 }
