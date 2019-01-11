@@ -55,17 +55,36 @@
 
 /** Default button **/
 .btn-breadcrumb .btn.btn-default:not(:last-child):after {
-  border-left: 10px solid #fff;
+  border-left: 10px solid #f4f4f4;
 }
 .btn-breadcrumb .btn.btn-default:not(:last-child):before {
   border-left: 10px solid #ccc;
 }
 .btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
-  border-left: 10px solid #ebebeb;
+  border-left: 10px solid #e7e7e7;
 }
 .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
   border-left: 10px solid #adadad;
 }
+
+.btn-breadcrumb .btn.active, .btn:active {
+  box-shadow: none;
+  border-color: #ddd;
+  color: #1c8db7;
+}
+
+.btn-breadcrumb .btn-default:hover {
+  border-color: #ddd !important;
+}
+
+.btn-breadcrumb .btn.btn-default.active:not(:last-child):after {
+  border-left: 10px solid #e6e6e6;
+}
+
+.btn-breadcrumb .btn.btn-default.active:hover:not(:last-child):after {
+  border-left: 10px solid #d4d4d4;  
+}
+
 
 /** Primary button **/
 .btn-breadcrumb .btn.btn-primary:not(:last-child):after {
