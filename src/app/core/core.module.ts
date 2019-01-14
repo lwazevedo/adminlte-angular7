@@ -5,6 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import { InMemoryDataBase } from '../in-memory-database';
+
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SettingsComponent } from './components/settings/settings.component';
@@ -26,6 +29,7 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataBase),
     RouterModule
   ],
   exports: [
