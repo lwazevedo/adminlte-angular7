@@ -1,0 +1,39 @@
+<div class="login-box">
+  <div class="login-logo">
+    <a [routerLink]="['/site']"><b>StarWars</b>API</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+
+    <form [formGroup]="loginForm" (submit)="submitForm()">
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" formControlName="email" placeholder="Email" [ngClass]="{ 'is-invalid': f.email.errors }">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span> 
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+      </div>
+      <div class="row">
+        <div class="col-xs-8"></div>
+        <div class="col-xs-4">
+          <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-block btn-flat pull-rigth">Sign
+            In</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+    <a [routerLink]="['/site']" class="text-center">Home Page</a>
+    <br>
+    <div *ngIf="f.email.errors || f.password.errors" class="text-danger mt-5">
+        <div *ngIf="submittingForm && f.email.errors.required">E-mail is required</div>
+        <div *ngIf="submittingForm !== null && f.email.errors?.email">E-mail is invalid</div>
+        <div *ngIf="submittingForm !== null && f.email.errors?.equal">E-mail must be equal to: {{emailTesting}}</div>
+        <div *ngIf="submittingForm !== null && f.password.errors?.equal">Password must be equal to: {{passwordTestig}}</div>
+    </div>
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
