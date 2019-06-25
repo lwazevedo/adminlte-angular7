@@ -1,4 +1,3 @@
-import { map } from 'rxjs/operators/map';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Site } from '../shared/site.model';
